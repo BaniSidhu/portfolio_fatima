@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+// import "./globals.css";
+import "./style.css"
+import Link from "next/link";
+import Head from "next/head";
+<script src="https://kit.fontawesome.com/9eeb6b3e0e.js" />
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +20,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      
+      <div className="container">
+        <nav>
+          <img className="logo" src="./logo.jpg" alt="" />
+          <ul>
+               <li><Link href="/">Home</Link></li>
+                   <li><Link href="/Services">Services</Link></li>
+                
+             <li><Link href="/About">About</Link></li>
+                   <li><Link href="/Contact">Contact</Link></li>
+               </ul></nav>
+    </div>
+    {children}</body>
     </html>
   );
 }
